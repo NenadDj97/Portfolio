@@ -844,8 +844,12 @@ section .title{
         width: 100%;
     }
 
+    .intro-column.right{
+        justify-content: space-around;
+    }
+
     .profile-picture{
-        height: 360px;
+        height: 60vh;
     }
 
     h1{
@@ -885,10 +889,16 @@ section .title{
 
 }
 
+@media screen and (max-width: 400px){
+    .profile-picture{
+        height: 50vh;
+    }
+}
+
 @media screen and (max-width: 350px){
     
     .profile-picture{
-        height: 280px;
+        height: 45vh;
     }
 
     h1{
