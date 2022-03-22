@@ -23,3 +23,39 @@ $(document).ready(function(){
     } // End if
   });
 });
+
+jQuery(document).ready(function($) {
+
+    var open = false;
+
+    var openMenu = function() {
+        $('.phone-nav').addClass('downward');
+        $('#expand-menu').addClass('active');
+        $('#expand-menu').addClass('toggle-close');
+        open = true;
+    }
+    var closeMenu = function() {
+        $('.phone-nav').removeClass('downward');
+        $('#expand-menu').removeClass('active');
+        $('#expand-menu').removeClass('toggle-close');
+        open = false;
+    }
+
+    $('#expand-menu').click(function(event){
+        event.stopPropagation();
+        var toggle = open ? closeMenu : openMenu;
+        toggle();
+    });
+/* 
+
+    $('#expand-menu').click(function(event) {
+        event.stopPropagation();
+        openMenu();
+    }); */
+
+    $(document).click(function(event) {
+        if (!$(event.target).closest('.nav-container.downward').length) {
+            closeMenu();
+        }
+    });
+});
