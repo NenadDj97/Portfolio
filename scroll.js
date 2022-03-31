@@ -59,3 +59,13 @@ jQuery(document).ready(function($) {
         }
     });
 });
+
+$(window).scroll(function() {    
+  var scroll = $(window).scrollTop();
+
+  if (scroll >= 200) {
+      $("#fading").addClass("scrolled");
+  } else {
+      $("#fading.scrolled").removeClass("scrolled");
+  }
+});

@@ -6,22 +6,7 @@ const gradient = new Gradient()
 // Call `initGradient` with the selector to your canvas
 gradient.initGradient('#gradient-canvas')
 
-function fader() {
-    var b = $('#fading'),
-        wh = $(window).height(),
-        dt = $(document).scrollTop(),
 
-        blueView = wh - (b.offset().top - dt),
-        op;
-
-    if (blueView > 0) {
-        op = 1 - 1 / (wh + b.height()) * blueView;
-        if (op > 0)
-            b.css({opacity: op});
-    }
-}
-// Event on scroll
-$(document).bind('scroll', fader);
 
 /* FEEDBACK owl carousel script */
 
